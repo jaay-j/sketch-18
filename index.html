@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Eighteenth Sketch</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="CSS/style.css">
+    <script src="lib/p5.min.js"></script>
+    <script src="lib/p5.particle.js"></script>
+    <script src="lib/p5.shape.js"></script>
+    
+
+
+</head>
+
+<body>
+
+    <script src="javascript/sketch-18.js"></script>
+
+    <h1>Sketch 18</h1>
+    <p> What I made with p5 -- Day 18! </p>
+    <br><br>
+    <img src="img/sketch-18.png">
+
+    <div id="container">
+
+    <h3>
+
+        var of; <br>
+        var s="Nn"<br><br>
+        
+        function ftext(fountain, particle) {<br>
+          /*stroke(fountain.colors[Math.floor(particle.life*fountain.colors.length)]);*/<br>
+          noFill();<br>
+          textSize(particle.partSize);<br>
+          text(s[particle.id%2], particle.location.x, particle.location.y);<br>
+        }<br><br>
+        
+        function setup() {<br>
+            createCanvas(1000, 1000);<br>
+            background(215, 87, 217);<br><br>
+        
+            var t =<br>
+            {<br>
+                name: "test",<br>
+                shape: "text",<br>
+                colors: ["blue","pink"],<br>
+                lifetime: 600,<br>
+                angle: [20, 360],<br>
+                size: [40, 200],<br>
+                x: 0.5,<br>
+                y: 0.2<br>
+            };<br>
+            Fountain_display("text", ftext); //set draw function based on shape name<br>
+            of = new Fountain(null, t);<br>
+        }<br><br>
+        
+        function draw() {<br>
+        background(215, 87, 217);<br>
+          of.Draw();<br>
+          of.Create();<br>
+          of.Step();<br>
+          noStroke();<br>
+          fill(255);<br>
+          textSize(16);<br>
+          stroke(0);<br><br>
+        
+          textSize(800);<br>
+        text('n', 280, 700);<br>
+        fill(0);<br>
+        }
+       <br>
+
+</h3>
+</div>
+
+
+<a href="https://jaay-j.github.io/sketch_main" style="font-size:30px; margin:40%; color: rgb(145, 35, 189);"> BACK TO MENU </a> 
+
+</body>
+</html>
